@@ -110,8 +110,10 @@ After initiating the application and creating new object you can access all of i
 
 Contribute
 ----------
+
 - Issue Tracker: https://github.com/theshahidali/GAPL/issues
 - Source Code: https://github.com/theshahidali/GAPL
+
 Support
 -------
 
