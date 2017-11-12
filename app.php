@@ -71,7 +71,7 @@ class App{
 	*/
 	public function getUser($user,$fields=array("fields"=>""),$key=array("access_token"=>"")){
 
-		$url="https://graph.facebook.com/$user?fields=".$fields['fields']."&access_token=".$key['access_token'];
+		$url="https://graph.facebook.com/v2.11/$user?fields=".$fields['fields']."&access_token=".$key['access_token'];
 
 		$ch = curl_init();
 
