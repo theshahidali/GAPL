@@ -115,7 +115,7 @@ class App{
 	public function apiPost($location,$token,$message=array()){
 
 		$message['access_token']="$token";
-		$url="https://graph.facebook.com/$location/feed";
+		$url="https://graph.facebook.com/v2.11/$location/feed";
 
 		$ch = curl_init();
  
@@ -160,7 +160,7 @@ class App{
 
 		$pageId=$config['page_id'];
 		$token=$config['access_token'];
-		$url = "https://graph.facebook.com/$pageId?fields=access_token&access_token=$token";
+		$url = "https://graph.facebook.com/v2.11/$pageId?fields=access_token&access_token=$token";
 		
 		$ch = curl_init();
 
@@ -202,7 +202,7 @@ class App{
 	*/
 	public function getAllPages($token){
 
-		$url="https://graph.facebook.com/me/accounts?fields=id,name,category&limit=100&access_token=$token";
+		$url="https://graph.facebook.com/v2.11/me/accounts?fields=id,name,category&limit=100&access_token=$token";
 		
 		$ch = curl_init();
 
@@ -290,7 +290,7 @@ class App{
 	*/
 	function getPermissions($token,$redirect=''){
 
-		$url="https://graph.facebook.com/me/permissions?access_token=$token";
+		$url="https://graph.facebook.com/v2.11/me/permissions?access_token=$token";
 
 		$ch = curl_init();
 
