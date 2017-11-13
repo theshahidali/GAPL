@@ -22,6 +22,7 @@ class App{
 	//@var appSecret string
 	protected $appId;
 	protected $appSecret;
+	protected $node = "https://graph.facebook.com/v2.11/";
 
 	/**********************************************************************
 	* Requires @param config
@@ -71,7 +72,7 @@ class App{
 	*/
 	public function getUser($user,$fields=array("fields"=>""),$key=array("access_token"=>"")){
 
-		$url="https://graph.facebook.com/v2.11/$user?fields=".$fields['fields']."&access_token=".$key['access_token'];
+		$url=$this->node."$user?fields=".$fields['fields']."&access_token=".$key['access_token'];
 
 		$ch = curl_init();
 
@@ -115,7 +116,7 @@ class App{
 	public function apiPost($location,$token,$message=array()){
 
 		$message['access_token']="$token";
-		$url="https://graph.facebook.com/v2.11/$location/feed";
+		$url=$this->node."$location/feed";
 
 		$ch = curl_init();
  
@@ -160,7 +161,7 @@ class App{
 
 		$pageId=$config['page_id'];
 		$token=$config['access_token'];
-		$url = "https://graph.facebook.com/v2.11/$pageId?fields=access_token&access_token=$token";
+		$url = $this->node."$pageId?fields=access_token&access_token=$token";
 		
 		$ch = curl_init();
 
@@ -202,7 +203,7 @@ class App{
 	*/
 	public function getAllPages($token){
 
-		$url="https://graph.facebook.com/v2.11/me/accounts?fields=id,name,category&limit=100&access_token=$token";
+		$url= $this->node."me/accounts?fields=id,name,category&limit=100&access_token=$token";
 		
 		$ch = curl_init();
 
@@ -245,7 +246,7 @@ class App{
 
 		$clientId = $this->appId;
 		$secret = $this->appSecret;
-		$url="https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=$clientId&client_secret=$secret&fb_exchange_token=$token";
+		$url=$this->node."oauth/access_token?grant_type=fb_exchange_token&client_id=$clientId&client_secret=$secret&fb_exchange_token=$token";
 		
 		$ch = curl_init();
 
@@ -290,7 +291,7 @@ class App{
 	*/
 	function getPermissions($token,$redirect=''){
 
-		$url="https://graph.facebook.com/v2.11/me/permissions?access_token=$token";
+		$url= $this->node."me/permissions?access_token=$token";
 
 		$ch = curl_init();
 
