@@ -40,10 +40,7 @@ $param = array(
 // NOTE: getUser() accepts a third parameter also. This parameter should 
 // be an array with key named 'access_token'
 $result = $app->getUser("shahid.sid",$param);
-
-// print_r($result);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
