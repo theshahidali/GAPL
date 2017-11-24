@@ -1,6 +1,6 @@
 <?php
 /*
- 	Graph API PHP Library[GAPL] could be used to access Graph API easily
+    Graph API PHP Library[GAPL] could be used to access Graph API easily
     Copyright (C) 2015  Shahid Ali
 
     This program is free software: you can redistribute it and/or modify
