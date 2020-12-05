@@ -119,4 +119,4 @@ Support
 
 If you have any issues, Let me know on my following email address. I will reply you ASAP.
 
->shahidali.1@hotmail.com
+>contact@shahidalionline.com
